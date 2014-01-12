@@ -12,7 +12,7 @@ typedef struct vector{
   double x;
   double y;
   double z;
-} *vector;
+} vector;
 
 vector vectorMalloc(void);
 void vectorFree(vector v);
