@@ -16,10 +16,10 @@ typedef struct vector{
 
 vector vectorMalloc(void);
 void vectorFree(vector v);
-void assign(vector target, /* inout */
+void assign(vector *target, /* inout */
 	    double x, double y, double z /* in */);
-void copy(vector target, vector source);
-void add(vector target,  /* out */
+void copy(vector *target, vector source);
+void add(vector *target,  /* out */
 	 vector source1, /* in */
 	 vector source2  /* in */);
 void subtract(vector target,  /* out */

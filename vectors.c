@@ -11,35 +11,35 @@ Geoffrey Matthews
 */
 
 vector vectorMalloc(void) {
-  vector v = (vector)malloc(sizeof(struct vector));
-  if (v == NULL) {
-    printf("ERROR in vectorMalloc.\n");
-    exit(-1);
-  }
-  v->x = 0.0; v->y = 0.0; v->z = 0.0;
+  vector v;
+  //if (v == NULL) {
+  //  printf("ERROR in vectorMalloc.\n");
+  //  exit(-1);
+  //}
+  v.x = 0.0; v.y = 0.0; v.z = 0.0;
   return v;
 }
 
 void vectorFree(vector v) {
-  free(v);
+  //  free(v);
 }
 
-void assign(vector target, /* out */
+void assign(vector *target, /* out */
 	    double x, double y, double z /* in */) {
   *target = (struct vector){x,y,z};
 }
 
-void copy(vector target, /* out */
+void copy(vector *target, /* out */
 	  vector source  /* in */) {
-  target->x = source->x; target->y = source->y; target->z = source->z;
+  *target.x = source.x; *target.y = source.y; *target.z = source.z;
 }
 
-void add(vector target, /* out */
+void add(vector *target, /* out */
 	 vector source1, /* in */
 	 vector source2  /* in */) {
-  target->x = source1->x + source2->x;
-  target->y = source1->y + source2->y;
-  target->z = source1->z + source2->z;
+  *target.x = source1.x + source2.x;
+  *target.y = source1.y + source2.y;
+  *target.z = source1.z + source2.z;
 }
 
 void subtract(vector target, /* out */
