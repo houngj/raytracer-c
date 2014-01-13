@@ -21,12 +21,12 @@ int main(int argc, char * argv[] ) {
   // tilt ring by pi/6:
   s = sin(pi/6.0);
   c = cos(pi/6.0);
-
+  
   // build world:
-  assign(theworld->backgroundColor, 0.5, 0.75, 1.0);
-  assign(theworld->eye, 0.0, 0.0, 150.0);
-  assign(theworld->light, 1.0, 1.0, 1.0);
-  normalize(theworld->light);
+  assign(&theworld.backgroundColor, 0.5, 0.75, 1.0);
+  assign(&theworld.eye, 0.0, 0.0, 150.0);
+  assign(&theworld.light, 1.0, 1.0, 1.0);
+  normalize(&theworld.light);
   
   // make ring:
   radius1 = 500.0;
@@ -66,9 +66,10 @@ int main(int argc, char * argv[] ) {
     mySphere = makeSphere(x, c*y-s*z, s*y+c*z - 2000.0,
 			  60.0,
 			  r, g, b);
-    addSphere(theworld, mySphere);
+    addSphere(&theworld, mySphere);
   }
 
   tracer("images/ring.ppm", 6, theworld);
+  
   return 0;
 }

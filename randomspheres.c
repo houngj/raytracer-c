@@ -14,7 +14,7 @@ int main(int argc, char * argv[] ) {
   int i;
   int n  = 100;
   for (i = 0; i < n; i++) {
-    addSphere(theworld,
+    addSphere(&theworld,
 	      makeSphere((frand()-0.5)*500.0,
 			 (frand()-0.5)*500.0,
 			 (frand()-0.5)*500.0 - 1000.0,
